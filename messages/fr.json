@@ -1,0 +1,26 @@
+{
+    "header": {
+        "banner": "Obtenez de nouveaux liens de parrainage chaque mois"
+    },
+    "supportMeCard": {
+        "title": "Débloquez des offres exclusives avec mes codes de parrainage !",
+        "description": "Découvrez une sélection de codes de parrainage pour les appareils, jeux et applications Meta Quest, mise à jour chaque mois. Que vous cherchiez à économiser sur votre prochaine aventure en VR ou à débloquer des réductions spéciales, mon site est fait pour vous. Soutenez mon parcours tout en profitant d'offres incroyables !",
+        "supportMeBtn": "Soutenez-moi",
+        "hideBtn": "Masquer"
+    },
+    "referralLinks": {
+        "apps": {
+            "title": "Économisez jusqu'à 15% sur votre prochain achat !",
+            "card": {
+                "description": "Utilisez mon lien de parrainage pour acheter {name} et bénéficiez de {discount}% de réduction sur votre achat"
+            }
+        },
+        "devices": {
+            "title" : "Recevez un crédit de 30 $ avec votre achat"
+        }
+    },
+    "newsletter": {
+        "title": "Rejoignez ma newsletter pour rester informé des derniers codes de parrainage pour les applications et les appareils Meta Quest",
+        "subscribeBtn": "s'abonner"
+    }
+}

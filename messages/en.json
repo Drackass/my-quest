@@ -1,0 +1,26 @@
+{
+    "header": {
+        "banner": "Get new referral links every month"
+    },
+    "supportMeCard": {
+        "title": "Unlock Exclusive Deals with My Referral Codes!",
+        "description": "Discover a curated collection of referral codes for Meta Quest devices, games, and apps, updated monthly. Whether you’re looking to save on your next VR adventure or unlock special discounts, my site has you covered. Support my journey and grab amazing deals while you’re at it!",
+        "supportMeBtn": "Support Me",
+        "hideBtn": "Hide"
+    },
+    "referralLinks": {
+        "apps": {
+            "title": "Save up to 15% on your next purchase!",
+            "card": {
+                "description": "Use my referral link to buy {name} and you can get {discount}% off your purchase"
+            }
+        },
+        "devices": {
+            "title" : "Get a $30 credit with your purchase"
+        }
+    },
+    "newsletter": {
+        "title": "Join my newsletter to stay updated on the latest referral codes for apps and Meta Quest devices",
+        "subscribeBtn": "subscribe"
+    }
+}

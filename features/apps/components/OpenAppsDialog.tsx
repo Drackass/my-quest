@@ -31,6 +31,7 @@ import {
 } from "@/components/ui/drawer";
 import Image from "next/image";
 import { Ratings } from "@/components/Rating";
+import { Badge } from "@/components/ui/badge";
 
 const OpenAppsDialog = () => {
   const { isOpen, onClose, app } = useOpenApps();
@@ -78,7 +79,7 @@ const OpenAppsDialog = () => {
           <ul className="mt-2 w-full px-4">
             <li className="flex flex-col gap-3">
               <div className="flex items-center gap-3">
-                <CircleArrowRight size={20} className="text-primary" />
+            <Badge variant={"outline"} className="p-0 w-5 h-5 justify-center">1</Badge>
                 <p>
                   Follow{" "}
                   <a
@@ -95,13 +96,13 @@ const OpenAppsDialog = () => {
             </li>
             <li className="flex flex-col gap-3">
               <div className="flex items-center gap-3">
-                <CircleArrowRight size={20} className="text-primary" />
+            <Badge variant={"outline"} className="p-0 w-5 h-5 justify-center">2</Badge>
                 <p>Wait until I follow you back</p>
               </div>
             </li>
             <li className="flex flex-col gap-3">
               <div className="flex items-center gap-3">
-                <CircleArrowRight size={20} className="text-primary" />
+            <Badge variant={"outline"} className="p-0 w-5 h-5 justify-center">3</Badge>
                 <p>
                   take advantage of the{" "}
                   <strong className="font-semibold">{app.discount}%</strong>{" "}
@@ -132,7 +133,6 @@ const OpenAppsDialog = () => {
 
   return (
     <Dialog open={isOpen} onOpenChange={onClose} >
-      {/* <DialogTrigger asChild>{children}</DialogTrigger> */}
       <DialogContent className="sm:max-w-[600px]">
         <DialogHeader>
           <div className="flex items-center gap-2">
@@ -161,31 +161,7 @@ const OpenAppsDialog = () => {
               </div>
             </div>
           </div>
-          {/* <DialogTitle>{app?.title}</DialogTitle>
-          <DialogDescription asChild>
-            <div className="flex flex-col items-center">
-              <div className="flex items-center gap-1 ">
-                <p className="text-muted-foreground text-sm">
-                  {stringifiedTags}
-                </p>
-              </div>
-              <div className="flex items-center gap-1">
-                <Ratings rating={app.rating} size={13} />
-                <p className="text-muted-foreground font-semibold text-sm">
-                  {app.rating}
-                </p>
-              </div>
-            </div>
-          </DialogDescription> */}
         </DialogHeader>
-          {/* <iframe
-            width="560"
-            height="315"
-            src={app.trailer}
-            title="YouTube video player"
-            allow="autoplay"
-            className="w-full aspect-video rounded-xl"
-          ></iframe> */}
         <p className="text-xl text-muted-foreground mt-10">
           Use my referral link to buy <strong className="font-bold">{app.title}</strong> and you can get <strong className="font-bold">{app.discount}</strong>
           % off your purchase
@@ -193,7 +169,7 @@ const OpenAppsDialog = () => {
         <ul className="[&>li]:mt-2 w-full">
           <li className="flex flex-col gap-3">
             <div className="flex items-center gap-3">
-              <CircleArrowRight size={20} className="text-primary" />
+              <Badge variant={"outline"} className="p-0 w-5 h-5 justify-center">1</Badge>
               <p>
                 Follow{" "}
                 <a
@@ -211,15 +187,14 @@ const OpenAppsDialog = () => {
           <li className="flex flex-col gap-3">
             <div className="">
               <div className="flex items-center gap-3">
-                <CircleArrowRight size={20} className="text-primary" />
+              <Badge variant={"outline"} className="p-0 w-5 h-5 justify-center">2</Badge>
                 <p>Wait until I follow you back</p>
               </div>
-              {/* <p className="text-sm text-muted-foreground">(To speed up the process, I advise you to contact me directly via live chat on this site.)</p> */}
             </div>
           </li>
           <li className="flex flex-col gap-3">
             <div className="flex items-center gap-3">
-              <CircleArrowRight size={20} className="text-primary" />
+            <Badge variant={"outline"} className="p-0 w-5 h-5 justify-center">3</Badge>
               <p>
                 take advantage of the{" "}
                 <strong className="font-semibold">{app.discount}%</strong>{" "}

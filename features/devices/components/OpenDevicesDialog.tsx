@@ -66,7 +66,8 @@ const OpenDevicesDialog = () => {
             <ul className="mt-5 flex flex-col gap-1 font-semibold px-4 text-sm">
               <li className="flex flex-col gap-3">
                 <div className="flex items-center gap-3">
-                  <CircleArrowRight size={20} className="text-primary" />
+              <Badge variant={"outline"} className="p-0 w-5 h-5 justify-center">1</Badge>
+
                   <span>
                     <a
                       href=""
@@ -101,14 +102,15 @@ const OpenDevicesDialog = () => {
               <li className="flex flex-col gap-3">
                 <div className="">
                   <div className="flex items-center gap-3">
-                    <CircleArrowRight size={20} className="text-primary" />
+              <Badge variant={"outline"} className="p-0 w-5 h-5 justify-center">2</Badge>
                     <p>Buy a {device.title} from any retailer.</p>
                   </div>
                 </div>
               </li>
               <li className="flex flex-col gap-3">
                 <div className="flex items-center gap-3">
-                  <CircleArrowRight size={20} className="text-primary" />
+              <Badge variant={"outline"} className="p-0 w-5 h-5 justify-center">3</Badge>
+
                   <p>
                     Activate your {device.title} to get $30 in Quest credit.
                   </p>
@@ -149,7 +151,7 @@ const OpenDevicesDialog = () => {
         <ul className="[&>li]:mt-2 w-full">
           <li className="flex flex-col gap-3">
             <div className="flex items-center gap-3">
-              <CircleArrowRight size={20} className="text-primary" />
+            <Badge variant={"outline"} className="p-0 w-5 h-5 justify-center">1</Badge>
               <p>
                 <a
                   href=""
@@ -184,7 +186,7 @@ const OpenDevicesDialog = () => {
           <li className="flex flex-col gap-3">
             <div className="">
               <div className="flex items-center gap-3">
-                <CircleArrowRight size={20} className="text-primary" />
+              <Badge variant={"outline"} className="p-0 w-5 h-5 justify-center">2</Badge>
                 <p>Buy a {device.title} from any retailer.</p>
               </div>
               {/* <p className="text-sm text-muted-foreground">(To speed up the process, I advise you to contact me directly via live chat on this site.)</p> */}
@@ -192,7 +194,7 @@ const OpenDevicesDialog = () => {
           </li>
           <li className="flex flex-col gap-3">
             <div className="flex items-center gap-3">
-              <CircleArrowRight size={20} className="text-primary" />
+            <Badge variant={"outline"} className="p-0 w-5 h-5 justify-center">3</Badge>
               <p>Activate your {device.title} to get $30 in Quest credit.</p>
             </div>
           </li>

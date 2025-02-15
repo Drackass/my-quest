@@ -22,12 +22,13 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = metaData;
 
 export default function RootLayout({
-  children,
+  children, params: { locale },
 }: Readonly<{
-  children: React.ReactNode;
+  children: React.ReactNode,
+  params: { locale: string },
 }>) {
   return (
-    <html lang="en">
+    <html lang={locale}>
       <CrispProvider />
       <DialogProvider />
       <body
