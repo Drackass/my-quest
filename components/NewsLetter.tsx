@@ -17,6 +17,7 @@ import {
 import { useState } from "react";
 import { toast } from "sonner";
 import { useTranslations } from "next-intl";
+import { LoaderCircle } from "lucide-react";
 
 const formSchema = z.object({
   email: z
@@ -53,7 +54,8 @@ export default function NewsLetter() {
       className="w-full max-w-screen-md mx-auto px-5 lg:px-0 mb-12"
       id="news-letter"
     >
-      <div className="bg-secondary p-8 rounded-xl text-sm text-muted-foreground">
+      <div className="bg-secondary p-8 rounded-xl text-sm text-muted-foreground space-y-3">
+        <p>{t("title")}</p>
         <Form {...form}>
           <form
             onSubmit={form.handleSubmit(onSubmit)}
@@ -63,9 +65,8 @@ export default function NewsLetter() {
               control={form.control}
               name="email"
               render={({ field }) => (
-                <FormItem>
-                  <FormDescription>{t("title")}</FormDescription>
-                  {/* <FormLabel>Username</FormLabel> */}
+                <FormItem className="flex-1">
+                  {/* <FormDescription>{t("title")}</FormDescription> */}
                   <FormControl>
                     <Input placeholder="you@exemple.com" {...field} />
                   </FormControl>
@@ -74,7 +75,11 @@ export default function NewsLetter() {
               )}
             />
             <Button type="submit">
-              {isLoading ? "Loading..." : t("subscribeBtn")}
+              {isLoading ? (
+                <LoaderCircle
+                className="animate-spin"
+                 />
+              ) : t("subscribeBtn")}
             </Button>
           </form>
         </Form>

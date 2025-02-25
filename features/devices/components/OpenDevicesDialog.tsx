@@ -187,9 +187,6 @@ const OpenDevicesDialog = () => {
           {device.new && <Badge variant={"outline"}>{t("newBadge")}</Badge>}
         </DialogHeader>
         <p className="text-xl text-muted-foreground mt-10">
-          {/* you'll receive <strong className="font-bold">$30</strong> in
-          promotional Quest cash when you use this referral link to purchase a{" "}
-          <strong className="font-bold">{device.title}</strong> device. */}
           {t.rich("useMyReferralLink", {
             Bold: (chunks) => <strong className="font-bold">{chunks}</strong>,
             credit: "30",
@@ -198,37 +195,37 @@ const OpenDevicesDialog = () => {
         </p>
         <ul className="[&>li]:mt-2 w-full">
           <li className="flex flex-col gap-3">
-            <div className="flex items-center gap-3">
-              <Badge variant={"outline"} className="p-0 w-5 h-5 justify-center">
-                1
+            <div className="flex items-start gap-3">
+              <Badge
+          variant={"outline"}
+          className="p-0 w-6 h-6 flex items-center justify-center rounded-full"
+              >
+          1
               </Badge>
               <p>
-                {t.rich("stepOne", {
-                  CreateAcount: (chunks) => (
-                    <a
-                      href="https://www.meta.com/fr-fr/help/quest/1336626146870772/"
-                      target="_blank"
-                      rel="noreferrer"
-                      className="text-primary font-semibold"
-                    >
-                      {chunks}
-                    </a>
-                  ),
-                  LogIn: (chunks) => (
-                    <a
-                      href="https://www.meta.com/fr-fr/help/quest/1336626146870772/"
-                      target="_blank"
-                      rel="noreferrer"
-                      className="text-primary font-semibold"
-                    >
-                      {chunks}
-                    </a>
-                  ),
-                  ReferralLink: (chunks) => (
-                    <a
-                      href="https://www.meta.com/referrals/link/LenySauzet"
-                      target="_blank"
-                      rel="noreferrer"
+          {t.rich("stepOne", {
+            CreateAcount: (chunks) => (
+              <a
+                href="https://www.meta.com/fr-fr/help/quest/1336626146870772/"
+                target="_blank"
+                rel="noreferrer"
+                className="text-primary font-semibold"
+              >
+                {chunks}
+              </a>
+            ),
+            LogIn: (chunks) => (
+              <a
+                href="https://www.meta.com/fr-fr/help/quest/1336626146870772/"
+                target="_blank"
+                rel="noreferrer"
+                className="text-primary font-semibold"
+              >
+                {chunks}
+              </a>
+            ),
+            ReferralLink: (chunks) => (
+              <a
                       className="text-primary font-semibold"
                     >
                       {chunks}
