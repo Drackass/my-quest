@@ -7,7 +7,6 @@ import { useTranslations } from "next-intl";
 
 export default function Apps() {
   const { apps, loading } = useSearch();
-  // on change l'ordre des apps pour que les app.disables soient en dernier
   apps.sort((a, b) => (a.disabled === b.disabled ? 0 : a.disabled ? 1 : -1));
   const bestDeal = appsData.reduce((acc, app) => {
     if (app.discount > acc.discount) {

@@ -12,7 +12,6 @@ import {
   FormDescription,
   FormField,
   FormItem,
-  FormLabel,
   FormMessage,
 } from "@/components/ui/form";
 import { useState } from "react";
@@ -39,20 +38,16 @@ export default function NewsLetter() {
   const [isLoading, setIsLoading] = useState(false);
 
   const onSubmit = async (values: z.infer<typeof formSchema>) => {
-    // const result = axios.post("/api/addSubscription", values).then((res) => {
-    //   console.log(res);
-    // });
-
     try {
       setIsLoading(true);
-      const response = await axios.post(`/api/addSubscription`, values)
+      await axios.post(`/api/addSubscription`, values);
       toast.success("You have been subscribed to the newsletter");
-    } catch (error) {
+    } catch {
       toast.error("Something went wrong");
     } finally {
       setIsLoading(false);
     }
-  }
+  };
   return (
     <section
       className="w-full max-w-screen-md mx-auto px-5 lg:px-0 mb-12"
@@ -69,10 +64,7 @@ export default function NewsLetter() {
               name="email"
               render={({ field }) => (
                 <FormItem>
-                  <FormDescription>
-
-                    {t("title")}
-                  </FormDescription>
+                  <FormDescription>{t("title")}</FormDescription>
                   {/* <FormLabel>Username</FormLabel> */}
                   <FormControl>
                     <Input placeholder="you@exemple.com" {...field} />

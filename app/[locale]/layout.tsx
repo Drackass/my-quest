@@ -27,17 +27,19 @@ export default async function RootLayout({
   params,
 }: Readonly<{
   children: React.ReactNode;
-  params: { locale: string };
+  params: Promise<{ locale: string }>;
 }>) {
-  const { locale } = await params;
+  // Nous forçons `params` à être toujours un Promise et attendons sa résolution.
+  const resolvedParams = await params;
+  const { locale } = resolvedParams;
 
   let messages;
   try {
     messages = (await import(`@/messages/${locale}.json`)).default;
-  } catch (error) {
-    // Fallback à l'anglais si la locale n'est pas trouvée
+  } catch {
     messages = (await import("@/messages/en.json")).default;
   }
+
   return (
     <html lang={locale}>
       <NextIntlClientProvider locale={locale} messages={messages}>

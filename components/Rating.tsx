@@ -1,7 +1,7 @@
-import React from "react"
-import { Star } from "lucide-react"
+import React from "react";
+import { Star } from "lucide-react";
 
-import { cn } from "@/lib/utils"
+import { cn } from "@/lib/utils";
 
 const ratingVariants = {
   default: {
@@ -16,15 +16,15 @@ const ratingVariants = {
     star: "text-yellow-500",
     emptyStar: "text-yellow-200",
   },
-}
+};
 
 interface RatingsProps extends React.HTMLAttributes<HTMLDivElement> {
-  rating: number
-  totalStars?: number
-  size?: number
-  fill?: boolean
-  Icon?: React.ReactElement
-  variant?: keyof typeof ratingVariants
+  rating: number;
+  totalStars?: number;
+  size?: number;
+  fill?: boolean;
+  Icon?: React.ReactElement;
+  variant?: keyof typeof ratingVariants;
 }
 
 const Ratings = ({ ...props }: RatingsProps) => {
@@ -35,9 +35,9 @@ const Ratings = ({ ...props }: RatingsProps) => {
     fill = true,
     Icon = <Star />,
     variant = "default",
-  } = props
+  } = props;
 
-  const fullStars = Math.floor(rating)
+  const fullStars = Math.floor(rating);
   const partialStar =
     rating % 1 > 0 ? (
       <PartialStar
@@ -46,7 +46,7 @@ const Ratings = ({ ...props }: RatingsProps) => {
         className={cn(ratingVariants[variant].star)}
         Icon={Icon}
       />
-    ) : null
+    ) : null;
 
   return (
     <div className={cn("flex items-center gap-1")} {...props}>
@@ -69,17 +69,18 @@ const Ratings = ({ ...props }: RatingsProps) => {
         })
       )}
     </div>
-  )
-}
+  );
+};
 
 interface PartialStarProps {
-  fillPercentage: number
-  size: number
-  className?: string
-  Icon: React.ReactElement<any>
+  fillPercentage: number;
+  size: number;
+  className?: string;
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  Icon: React.ReactElement<any>;
 }
 const PartialStar = ({ ...props }: PartialStarProps) => {
-  const { fillPercentage, size, className, Icon } = props
+  const { fillPercentage, size, className, Icon } = props;
 
   return (
     <div style={{ position: "relative", display: "inline-block" }}>
@@ -101,7 +102,7 @@ const PartialStar = ({ ...props }: PartialStarProps) => {
         })}
       </div>
     </div>
-  )
-}
+  );
+};
 
-export { Ratings }
+export { Ratings };

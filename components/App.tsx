@@ -16,11 +16,8 @@ type AppProps = {
 export default function App({ app }: AppProps) {
 const local = useLocale() as keyof typeof app.tags;
 const tags = app.tags[local] || [];
-
-  // const stringifiedTags = app.tags.join(" · ");
-  // j'ai changer app pour avoir tags.fr et tags.en ...
   const stringifiedTags = tags.join(" · ");
-  const { onOpen, isOpen } = useOpenApps();
+  const { onOpen } = useOpenApps();
 
   return (
     <HoverCard>

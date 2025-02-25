@@ -1,9 +1,7 @@
 import { LoaderCircle, X } from "lucide-react";
 import { Search } from "lucide-react";
 import { Input } from "./ui/input";
-import { Button } from "./ui/button";
 import { useSearch } from "@/features/search/hooks";
-import { cn } from "@/lib/utils";
 import SupportMeCard from "./SupportMeCard";
 import { useTranslations } from "next-intl";
 

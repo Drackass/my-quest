@@ -2,8 +2,7 @@ import NewsLetter from "@/components/NewsLetter";
 import { ScrollToTop } from "@/components/ScrollToTop";
 import SearchApps from "@/components/SearchApps";
 
-export default function Home({ params }: { params: { lang: string } }) {
-  const { lang } = params;
+export default function Home() {
   return (
     <main className="flex-1 pb-10">
       <SearchApps />

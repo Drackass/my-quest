@@ -17,9 +17,10 @@ export async function POST(request: Request) {
     );
 
     return new Response(JSON.stringify({ res }));
-  } catch (error: any) {
+  } catch (error) {
     return new Response(
-      JSON.stringify({ error: JSON.parse(error.response.text) })
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
+      JSON.stringify({ error: JSON.parse((error as any).response.text) })
     );
   }
 }

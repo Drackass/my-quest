@@ -19,7 +19,7 @@ export function ScrollToTop({
     document.addEventListener("scroll", onScroll);
 
     return () => document.removeEventListener("scroll", onScroll);
-  }, []);
+  }, [minHeight]);
 
   return (
     <Button
