@@ -5,13 +5,18 @@ import { Badge } from "./ui/badge";
 import { devices } from "@/data/local-data";
 import { HoverCard, HoverCardContent, HoverCardTrigger } from "./ui/hover-card";
 import useOpenDevices from "@/features/devices/hooks/useOpenDevices";
+import { useTranslations } from "next-intl";
 
 export default function Devices() {
   const { onOpen, isOpen } = useOpenDevices();
+  const t = useTranslations("referralLinksDevices");
   return (
     <section id="devices" className="flex flex-col gap-3 overflow-x-scroll">
       <h2 className="scroll-m-20 text-2xl font-semibold tracking-tight">
-        Obtenez un crédit de 30 $ avec votre achat
+        {/* Obtenez un crédit de 30 $ avec votre achat */}
+        {t("getCredit", {
+          credit: "30",
+        })}
       </h2>
       <ul className="flex items-center gap-5 w-fit overflow-x-scroll">
         {devices.map((device) => (
@@ -34,7 +39,9 @@ export default function Devices() {
                         className="mb-1"
                       />
                       <h3 className="font-semibold">{device.title}</h3>
-                      {device.new && <Badge variant={"outline"}>New</Badge>}
+                      {device.new && (
+                        <Badge variant={"outline"}>{t("newBadge")}</Badge>
+                      )}
                     </div>
                   </HoverCardTrigger>
                   <HoverCardContent className="p-0 rounded-lg overflow-hidden w-fit">

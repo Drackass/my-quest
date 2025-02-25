@@ -1,0 +1,38 @@
+{
+  "header": {
+    "banner": "Erhalte jeden Monat neue Empfehlunglinks",
+    "referralLinksCount": "Meta Quest Empfehlunglinks"
+  },
+  "search": {
+    "placeholder": "Suchen"
+  },
+  "supportMeCard": {
+    "title": "Exklusive Angebote mit meinen Empfehlungscodes freischalten!",
+    "description": "Entdecke eine kuratierte Sammlung von Empfehlungscodes für Meta Quest Geräte, Spiele und Apps, die monatlich aktualisiert werden. Egal, ob du bei deinem nächsten VR-Abenteuer sparen oder spezielle Rabatte freischalten möchtest – meine Seite hat alles für dich! Unterstütze mich und sichere dir großartige Deals!",
+    "supportMeBtn": "Unterstütze mich",
+    "hideBtn": "Verbergen"
+  },
+  "referralLinksApps": {
+    "saveUpTo": "Spare bis zu {bestDeal}% bei deinem nächsten Einkauf!",
+    "useMyReferralLink": "Nutze meinen Empfehlungslink, um <Bold>{title}</Bold> zu kaufen, und erhalte <Bold>{discount}</Bold>% Rabatt auf deinen Einkauf",
+    "stepOne": "Folge <FollowMeLink>mir</FollowMeLink> auf Meta Horizon",
+    "stepTwo": "Warte, bis ich dir zurückfolge",
+    "stepThree": "Profitiere vom <Bold>{discount}%</Bold>-Rabatt",
+    "FollowMeBtn": "Folge mir",
+    "UseLinkBtn": "Spare {discount}%",
+    "noDevicesFound": "Keine Geräte gefunden."
+  },
+  "referralLinksDevices": {
+    "getCredit": "Erhalte ${credit} Guthaben mit deinem Kauf",
+    "newBadge": "neu",
+    "useMyReferralLink": "Du erhältst <Bold>${credit}</Bold> als Quest-Werbeguthaben, wenn du diesen Empfehlungslink nutzt, um ein <Bold>{device}</Bold>-Gerät zu kaufen.",
+    "stepOne": "<CreateAcount>Erstelle ein Meta-Konto</CreateAcount> oder <LogIn>melde dich an</LogIn> und <ReferralLink>klicke auf den Empfehlungslink</ReferralLink>.",
+    "stepTwo": "Kaufe ein <Bold>{device}</Bold> bei einem beliebigen Händler.",
+    "stepThree": "Aktiviere dein <Bold>{device}</Bold>, um <Bold>${credit}</Bold> in Quest-Guthaben zu erhalten.",
+    "useLinkBtn": "Erhalte ${credit} in Quest-Guthaben"
+  },
+  "newsLetter": {
+    "title": "Abonniere meinen Newsletter, um die neuesten Empfehlungscodes für Apps und Meta Quest Geräte zu erhalten",
+    "subscribeBtn": "Abonnieren"
+  }
+}

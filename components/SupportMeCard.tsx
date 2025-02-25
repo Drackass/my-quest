@@ -1,10 +1,11 @@
 import { cn } from "@/lib/utils";
-import { X } from "lucide-react";
-import React from "react";
 import { Button } from "./ui/button";
+import { useTranslations } from "next-intl";
+import { useState } from "react";
 
 export default function SupportMeCard() {
-  const [showInfo, setShowInfo] = React.useState(false);
+  const t = useTranslations('supportMeCard');
+  const [showInfo, setShowInfo] = useState(false);
   return (
     <article
       className={cn(
@@ -14,25 +15,24 @@ export default function SupportMeCard() {
     >
       <div className="flex items-center justify-between">
         <h1 className="text-lg font-semibold">
-          Unlock Exclusive Deals with My Referral Codes!
+          {t('title')}
         </h1>
       </div>
       <strong className="font-normal">
-        Discover a curated collection of referral codes for Meta Quest devices,
-        games, and apps, updated monthly. Whether you’re looking to save on your
-        next VR adventure or unlock special discounts, my site has you covered.
-        Support my journey and grab amazing deals while you’re at it!
+        {t('description')}
       </strong>
       <div className="flex gap-2 mt-5">
         <a href="#referral-links">
-          <Button className="w-fit rounded-full">Support Me</Button>
+          <Button className="w-fit rounded-full">
+            {t('supportMeBtn')}
+          </Button>
         </a>
         <Button
           variant={"outline"}
           className=" w-fit rounded-full"
           onClick={() => setShowInfo(!showInfo)}
         >
-          Hide
+          {t('hideBtn')}
         </Button>
       </div>
     </article>

@@ -1,0 +1,38 @@
+{
+  "header": {
+    "banner": "每月获取新的推荐链接",
+    "referralLinksCount": "Meta Quest 推荐链接"
+  },
+  "search": {
+    "placeholder": "搜索"
+  },
+  "supportMeCard": {
+    "title": "使用我的推荐码解锁独家优惠！",
+    "description": "发现精选的 Meta Quest 设备、游戏和应用的推荐码，每月更新。无论你是想在下一次 VR 探险中省钱，还是想解锁特别折扣，我的网站都能满足你的需求。支持我的旅程，同时获得超值优惠！",
+    "supportMeBtn": "支持我",
+    "hideBtn": "隐藏"
+  },
+  "referralLinksApps": {
+    "saveUpTo": "购买时最多可节省 {bestDeal}%！",
+    "useMyReferralLink": "使用我的推荐链接购买 <Bold>{title}</Bold>，即可享受 <Bold>{discount}</Bold>% 折扣",
+    "stepOne": "在 Meta Horizon 上 <FollowMeLink>关注我</FollowMeLink>",
+    "stepTwo": "等待我回关你",
+    "stepThree": "享受 <Bold>{discount}%</Bold> 的折扣",
+    "FollowMeBtn": "关注我",
+    "UseLinkBtn": "节省 {discount}%",
+    "noDevicesFound": "未找到设备。"
+  },
+  "referralLinksDevices": {
+    "getCredit": "购买时可获得 ${credit} 赠金",
+    "newBadge": "新",
+    "useMyReferralLink": "使用此推荐链接购买 <Bold>{device}</Bold> 设备，即可获得 <Bold>${credit}</Bold> 的 Quest 促销金。",
+    "stepOne": "<CreateAcount>创建 Meta 账户</CreateAcount> 或 <LogIn>登录</LogIn> 并 <ReferralLink>点击推荐链接</ReferralLink>。",
+    "stepTwo": "从任何零售商处购买 <Bold>{device}</Bold>。",
+    "stepThree": "激活你的 <Bold>{device}</Bold> 以获得 <Bold>${credit}</Bold> 的 Quest 赠金。",
+    "useLinkBtn": "获取 ${credit} Quest 赠金"
+  },
+  "newsLetter": {
+    "title": "订阅我的新闻通讯，获取最新的应用和 Meta Quest 设备推荐码",
+    "subscribeBtn": "订阅"
+  }
+}

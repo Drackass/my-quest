@@ -9,24 +9,36 @@ type SearchState = {
   apps: AppsData[];
 };
 
-const useSearch = create<SearchState>((set) => ({
-    search: "",
-    setSearch: (search) => {
-        set({ search, loading: true });
-        setTimeout(() => {
-            set((state) => ({
-                apps: search
-                    ? appsData.filter((app) =>
-                            app.title.toLowerCase().includes(search.toLowerCase())
-                        )
-                    : appsData,
-                loading: false,
-            }));
-        }, 1000);
-    },
-    clearSearch: () => set({ search: "", apps: appsData }),
-    loading: false,
-    apps: appsData,
-}));
+const useSearch = create<SearchState>((set) => {
+    let timeoutId: NodeJS.Timeout;
+
+    return {
+        search: "",
+        setSearch: (search) => {
+            set({ search, loading: true });
+            if (timeoutId) {
+                clearTimeout(timeoutId);
+            }
+            timeoutId = setTimeout(() => {
+                set((state) => ({
+                    apps: search
+                        ? appsData.filter((app) =>
+                                app.title.toLowerCase().includes(search.toLowerCase())
+                            )
+                        : appsData,
+                    loading: false,
+                }));
+            }, 500);
+        },
+        clearSearch: () => {
+            if (timeoutId) {
+                clearTimeout(timeoutId);
+            }
+            set({ search: "", apps: appsData });
+        },
+        loading: false,
+        apps: appsData,
+    };
+});
 
 export default useSearch;

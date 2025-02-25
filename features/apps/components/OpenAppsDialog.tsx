@@ -6,9 +6,7 @@ import { useOpenApps } from "@/features/apps/hooks";
 // libs
 import { useMedia } from "@/hooks";
 
-import { CircleArrowRight, CircleCheck } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import MetaLogo from "@/public/meta-logo.png";
 
 import {
   Dialog,
@@ -32,11 +30,16 @@ import {
 import Image from "next/image";
 import { Ratings } from "@/components/Rating";
 import { Badge } from "@/components/ui/badge";
+import { useLocale, useTranslations } from "next-intl";
+import { AppsData } from "@/data/local-data";
 
 const OpenAppsDialog = () => {
   const { isOpen, onClose, app } = useOpenApps();
   const isMobile = useMedia("(max-width: 768px)", false);
-  const stringifiedTags = app ? app.tags.join(" · ") : "";
+  const locale = useLocale();
+  const tags = app?.tags[locale as keyof typeof app.tags] || [];
+  const stringifiedTags = tags.join(" · ");
+  const t = useTranslations("referralLinksApps");
 
   if (!app) return null;
 
@@ -60,7 +63,7 @@ const OpenAppsDialog = () => {
                   <p className="text-muted-foreground font-semibold text-sm">
                     {app.rating}
                   </p>
-                  {app.tags.length > 0 && (
+                  {tags.length > 0 && (
                     <>
                       <p className="text-muted-foreground">&#183;</p>
                       <p className="text-muted-foreground text-sm">
@@ -72,41 +75,64 @@ const OpenAppsDialog = () => {
               </div>
             </div>
           </DrawerHeader>
-          <p className="text-xl text-muted-foreground px-4 mt-5">
-            Use my referral link to buy {app.title} and you can get{" "}
-            {app.discount}% off your purchase
+          <p className="text-xl text-muted-foreground px-4 mt-5 pb-5">
+            {t.rich("useMyReferralLink", {
+              Bold: (chunks) => <strong className="font-bold">{chunks}</strong>,
+              title: app.title,
+              discount: app.discount,
+            })}
           </p>
-          <ul className="mt-2 w-full px-4">
+          <ul className="w-full px-4 flex flex-col gap-2 text-sm mt-5">
             <li className="flex flex-col gap-3">
               <div className="flex items-center gap-3">
-            <Badge variant={"outline"} className="p-0 w-5 h-5 justify-center">1</Badge>
+                <Badge
+                  variant={"outline"}
+                  className="p-0 w-5 h-5 justify-center"
+                >
+                  1
+                </Badge>
                 <p>
-                  Follow{" "}
-                  <a
-                    href="https://horizon.meta.com/login/?redirect_uri=https%3A%2F%2Fhorizon.meta.com%2Fprofile%2F437608159443872%2F%3Fhwsh%3DVRbAT92QCu&session_id=ab4b97cd-d5c4-4e9e-b26b-920b02651bfb&utm_source=horizon_cross_screen-profile_details"
-                    target="_blank"
-                    rel="noreferrer"
-                    className="text-primary font-semibold"
-                  >
-                    me
-                  </a>{" "}
-                  on meta horizon
+                  {t.rich("stepOne", {
+                    FollowMeLink: (chunks) => (
+                      <a
+                        href="https://horizon.meta.com/login/?redirect_uri=https%3A%2F%2Fhorizon.meta.com%2Fprofile%2F437608159443872%2F%3Fhwsh%3DVRbAT92QCu&session_id=ab4b97cd-d5c4-4e9e-b26b-920b02651bfb&utm_source=horizon_cross_screen-profile_details"
+                        target="_blank"
+                        rel="noreferrer"
+                        className="text-primary font-semibold"
+                      >
+                        {chunks}
+                      </a>
+                    ),
+                  })}
                 </p>
               </div>
             </li>
             <li className="flex flex-col gap-3">
               <div className="flex items-center gap-3">
-            <Badge variant={"outline"} className="p-0 w-5 h-5 justify-center">2</Badge>
-                <p>Wait until I follow you back</p>
+                <Badge
+                  variant={"outline"}
+                  className="p-0 w-5 h-5 justify-center"
+                >
+                  2
+                </Badge>
+                <p>{t("stepTwo")}</p>
               </div>
             </li>
             <li className="flex flex-col gap-3">
               <div className="flex items-center gap-3">
-            <Badge variant={"outline"} className="p-0 w-5 h-5 justify-center">3</Badge>
+                <Badge
+                  variant={"outline"}
+                  className="p-0 w-5 h-5 justify-center"
+                >
+                  3
+                </Badge>
                 <p>
-                  take advantage of the{" "}
-                  <strong className="font-semibold">{app.discount}%</strong>{" "}
-                  discount
+                  {t.rich("stepThree", {
+                    Bold: (chunks) => (
+                      <strong className="font-semibold">{chunks}</strong>
+                    ),
+                    discount: app.discount,
+                  })}
                 </p>
               </div>
             </li>
@@ -115,14 +141,14 @@ const OpenAppsDialog = () => {
           <DrawerFooter className="mt-5">
             <div className="flex w-full gap-2">
               <a href={app.referralLinks} target="_blank" rel="noreferrer">
-                <Button>Save {app.discount}%</Button>
+                <Button>{t("UseLinkBtn", { discount: app.discount })}</Button>
               </a>
               <a
                 href="https://horizon.meta.com/login/?redirect_uri=https%3A%2F%2Fhorizon.meta.com%2Fprofile%2F437608159443872%2F%3Fhwsh%3DVRbAT92QCu&session_id=ab4b97cd-d5c4-4e9e-b26b-920b02651bfb&utm_source=horizon_cross_screen-profile_details"
                 target="_blank"
                 rel="noreferrer"
               >
-                <Button variant={"outline"}>Follow Me</Button>
+                <Button variant={"outline"}>{t("FollowMeBtn")}</Button>
               </a>
             </div>
           </DrawerFooter>
@@ -132,7 +158,7 @@ const OpenAppsDialog = () => {
   }
 
   return (
-    <Dialog open={isOpen} onOpenChange={onClose} >
+    <Dialog open={isOpen} onOpenChange={onClose}>
       <DialogContent className="sm:max-w-[600px]">
         <DialogHeader>
           <div className="flex items-center gap-2">
@@ -150,7 +176,7 @@ const OpenAppsDialog = () => {
                 <p className="text-muted-foreground font-semibold text-sm">
                   {app.rating}
                 </p>
-                {app.tags.length > 0 && (
+                {tags.length > 0 && (
                   <>
                     <p className="text-muted-foreground">&#183;</p>
                     <p className="text-muted-foreground text-sm">
@@ -163,42 +189,59 @@ const OpenAppsDialog = () => {
           </div>
         </DialogHeader>
         <p className="text-xl text-muted-foreground mt-10">
-          Use my referral link to buy <strong className="font-bold">{app.title}</strong> and you can get <strong className="font-bold">{app.discount}</strong>
-          % off your purchase
+          {t.rich("useMyReferralLink", {
+            Bold: (chunks) => <strong className="font-bold">{chunks}</strong>,
+            title: app.title,
+            discount: app.discount,
+          })}
         </p>
-        <ul className="[&>li]:mt-2 w-full">
+        <ul className="[&>li]:mt-2 w-full flex flex-col gap-2">
           <li className="flex flex-col gap-3">
             <div className="flex items-center gap-3">
-              <Badge variant={"outline"} className="p-0 w-5 h-5 justify-center">1</Badge>
+              <Badge variant={"outline"} className="p-0 w-5 h-5 justify-center">
+                1
+              </Badge>
               <p>
-                Follow{" "}
-                <a
-                  href="https://horizon.meta.com/login/?redirect_uri=https%3A%2F%2Fhorizon.meta.com%2Fprofile%2F437608159443872%2F%3Fhwsh%3DVRbAT92QCu&session_id=ab4b97cd-d5c4-4e9e-b26b-920b02651bfb&utm_source=horizon_cross_screen-profile_details"
-                  target="_blank"
-                  rel="noreferrer"
-                  className="text-primary font-semibold"
-                >
-                  me
-                </a>{" "}
-                on meta horizon
+                {t.rich("stepOne", {
+                  FollowMeLink: (chunks) => (
+                    <a
+                      href="https://horizon.meta.com/login/?redirect_uri=https%3A%2F%2Fhorizon.meta.com%2Fprofile%2F437608159443872%2F%3Fhwsh%3DVRbAT92QCu&session_id=ab4b97cd-d5c4-4e9e-b26b-920b02651bfb&utm_source=horizon_cross_screen-profile_details"
+                      target="_blank"
+                      rel="noreferrer"
+                      className="text-primary font-semibold"
+                    >
+                      {chunks}
+                    </a>
+                  ),
+                })}
               </p>
             </div>
           </li>
           <li className="flex flex-col gap-3">
             <div className="">
               <div className="flex items-center gap-3">
-              <Badge variant={"outline"} className="p-0 w-5 h-5 justify-center">2</Badge>
-                <p>Wait until I follow you back</p>
+                <Badge
+                  variant={"outline"}
+                  className="p-0 w-5 h-5 justify-center"
+                >
+                  2
+                </Badge>
+                <p>{t("stepTwo")}</p>
               </div>
             </div>
           </li>
           <li className="flex flex-col gap-3">
             <div className="flex items-center gap-3">
-            <Badge variant={"outline"} className="p-0 w-5 h-5 justify-center">3</Badge>
+              <Badge variant={"outline"} className="p-0 w-5 h-5 justify-center">
+                3
+              </Badge>
               <p>
-                take advantage of the{" "}
-                <strong className="font-semibold">{app.discount}%</strong>{" "}
-                discount
+                {t.rich("stepThree", {
+                  Bold: (chunks) => (
+                    <strong className="font-semibold">{chunks}</strong>
+                  ),
+                  discount: app.discount,
+                })}
               </p>
             </div>
           </li>
@@ -209,10 +252,10 @@ const OpenAppsDialog = () => {
             target="_blank"
             rel="noreferrer"
           >
-            <Button variant={"outline"}>Follow Me</Button>
+            <Button variant={"outline"}>{t("FollowMeBtn")}</Button>
           </a>
           <a href={app.referralLinks} target="_blank" rel="noreferrer">
-            <Button>Save {app.discount}%</Button>
+            <Button>{t("UseLinkBtn", { discount: app.discount })}</Button>
           </a>
         </DialogFooter>
       </DialogContent>

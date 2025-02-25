@@ -17,6 +17,7 @@ import {
 } from "@/components/ui/form";
 import { useState } from "react";
 import { toast } from "sonner";
+import { useTranslations } from "next-intl";
 
 const formSchema = z.object({
   email: z
@@ -33,6 +34,7 @@ export default function NewsLetter() {
       email: "",
     },
   });
+  const t = useTranslations("newsLetter");
 
   const [isLoading, setIsLoading] = useState(false);
 
@@ -68,8 +70,8 @@ export default function NewsLetter() {
               render={({ field }) => (
                 <FormItem>
                   <FormDescription>
-                    Join my newsletter to stay updated on the latest referral
-                    codes for apps and Meta Quest devices
+
+                    {t("title")}
                   </FormDescription>
                   {/* <FormLabel>Username</FormLabel> */}
                   <FormControl>
@@ -79,7 +81,9 @@ export default function NewsLetter() {
                 </FormItem>
               )}
             />
-            <Button type="submit">Submit</Button>
+            <Button type="submit">
+              {isLoading ? "Loading..." : t("subscribeBtn")}
+            </Button>
           </form>
         </Form>
       </div>

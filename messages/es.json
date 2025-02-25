@@ -1,0 +1,39 @@
+{
+  "header": {
+    "banner": "Obtén nuevos enlaces de recomendación cada mes",
+    "referralLinksCount": "Enlaces de recomendación de Meta Quest"
+  },
+  "search": {
+    "placeholder": "Buscar"
+  },
+  "supportMeCard": {
+    "title": "¡Desbloquea ofertas exclusivas con mis códigos de recomendación!",
+    "description": "Descubre una colección seleccionada de códigos de recomendación para dispositivos, juegos y aplicaciones de Meta Quest, actualizada mensualmente. Ya sea que quieras ahorrar en tu próxima aventura VR o desbloquear descuentos especiales, mi sitio tiene lo que necesitas. ¡Apóyame y obtén ofertas increíbles!",
+    "supportMeBtn": "Apóyame",
+    "hideBtn": "Ocultar"
+  },
+  "referralLinksApps": {
+    "saveUpTo": "¡Ahorra hasta {bestDeal}% en tu próxima compra!",
+    "useMyReferralLink": "Usa mi enlace de recomendación para comprar <Bold>{title}</Bold> y obtén un <Bold>{discount}</Bold>% de descuento en tu compra",
+    "stepOne": "Sigue a <FollowMeLink>mí</FollowMeLink> en Meta Horizon",
+    "stepTwo": "Espera a que te siga de vuelta",
+    "stepThree": "Aprovecha el descuento de <Bold>{discount}%</Bold>",
+    "FollowMeBtn": "Sígueme",
+    "UseLinkBtn": "Ahorra {discount}%",
+    "noDevicesFound": "No se encontraron dispositivos."
+
+  },
+  "referralLinksDevices": {
+    "getCredit": "Obtén ${credit} de crédito con tu compra",
+    "newBadge": "nuevo",
+    "useMyReferralLink": "Recibirás <Bold>${credit}</Bold> en crédito promocional de Quest al usar este enlace de recomendación para comprar un dispositivo <Bold>{device}</Bold>.",
+    "stepOne": "<CreateAcount>Crea una cuenta de Meta</CreateAcount> o <LogIn>inicia sesión</LogIn> y <ReferralLink>haz clic en el enlace de recomendación</ReferralLink>.",
+    "stepTwo": "Compra un <Bold>{device}</Bold> en cualquier minorista.",
+    "stepThree": "Activa tu <Bold>{device}</Bold> para recibir <Bold>${credit}</Bold> en crédito Quest.",
+    "useLinkBtn": "Obtén ${credit} en crédito Quest"
+  },
+  "newsLetter": {
+    "title": "Únete a mi boletín para mantenerte al día con los últimos códigos de recomendación para aplicaciones y dispositivos Meta Quest",
+    "subscribeBtn": "Suscribirse"
+  }
+}

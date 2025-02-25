@@ -1,13 +1,19 @@
 import { LoaderCircle, X } from "lucide-react";
-import { Search } from 'lucide-react';
+import { Search } from "lucide-react";
 import { Input } from "./ui/input";
 import { Button } from "./ui/button";
 import { useSearch } from "@/features/search/hooks";
 import { cn } from "@/lib/utils";
 import SupportMeCard from "./SupportMeCard";
+import { useTranslations } from "next-intl";
 
 export default function SearchSection() {
+  const t = useTranslations("search");
   const { search, setSearch, loading } = useSearch();
+
+  const clearSearch = () => {
+    setSearch("");
+  };
 
   return (
     <section
@@ -21,11 +27,18 @@ export default function SearchSection() {
           className="text-muted-foreground absolute left-5 top-4"
         />
         <Input
-          placeholder="Search"
+          placeholder={t("placeholder")}
           className="h-14 placeholder:text-lg pl-14 bg-secondary !text-lg"
           value={search}
           onChange={(e) => setSearch(e.target.value)}
         />
+        {search && !loading && (
+          <X
+            size={25}
+            className="absolute right-5 top-4 text-muted-foreground cursor-pointer"
+            onClick={clearSearch}
+          />
+        )}
         {loading && (
           <LoaderCircle
             size={25}

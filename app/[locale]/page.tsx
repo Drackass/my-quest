@@ -5,7 +5,7 @@ import SearchApps from "@/components/SearchApps";
 export default function Home({ params }: { params: { lang: string } }) {
   const { lang } = params;
   return (
-    <main className="flex-1 mb-10">
+    <main className="flex-1 pb-10">
       <SearchApps />
       <hr className="max-w-52 mx-auto my-10" />
       <NewsLetter />
