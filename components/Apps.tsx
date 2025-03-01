@@ -25,7 +25,7 @@ export default function Apps() {
       {loading ? (
       <AppsSkeleton />
       ) : apps.length === 0 ? (
-      <p>{t("noDevicesFound")}</p>
+      <p>{t("noAppsFound")}</p>
       ) : (
       <ul className="flex flex-col gap-2 flex-1">
         {apps.map((app) => (

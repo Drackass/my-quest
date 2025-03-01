@@ -41,7 +41,7 @@ export default async function RootLayout({
   }
 
   return (
-    <html lang={locale}>
+    <html lang={locale} className="">
       <NextIntlClientProvider locale={locale} messages={messages}>
         <CrispProvider />
         <DialogProvider />

@@ -20,7 +20,7 @@
     "stepThree": "享受 <Bold>{discount}%</Bold> 的折扣",
     "FollowMeBtn": "关注我",
     "UseLinkBtn": "节省 {discount}%",
-    "noDevicesFound": "未找到设备。"
+    "noAppsFound": "未找到应用"
   },
   "referralLinksDevices": {
     "getCredit": "购买时可获得 ${credit} 赠金",

@@ -54,16 +54,14 @@ const OpenDevicesDialog = () => {
               <DialogTitle>{device.title}</DialogTitle>
               {device.new && <Badge variant={"outline"}>{t("newBadge")}</Badge>}
             </DrawerHeader>
-            <DrawerDescription className="p-4">
-              <p className="text-xl text-muted-foreground mt-10">
-                {t.rich("useMyReferralLink", {
-                  Bold: (chunks) => (
-                    <strong className="font-bold">{chunks}</strong>
-                  ),
-                  credit: "30",
-                  device: device.title,
-                })}
-              </p>
+            <DrawerDescription className="p-4 text-xl text-muted-foreground mt-10">
+              {t.rich("useMyReferralLink", {
+                Bold: (chunks) => (
+                  <strong className="font-bold">{chunks}</strong>
+                ),
+                credit: "30",
+                device: device.title,
+              })}
             </DrawerDescription>
             <ul className="mt-5 px-4 flex flex-col gap-2 text-sm">
               <li className="flex flex-col gap-3">
@@ -197,39 +195,35 @@ const OpenDevicesDialog = () => {
           <li className="flex flex-col gap-3">
             <div className="flex items-start gap-3">
               <Badge
-          variant={"outline"}
-          className="p-0 w-6 h-6 flex items-center justify-center rounded-full"
+                variant={"outline"}
+                className="p-0 w-6 h-6 flex items-center justify-center rounded-full"
               >
-          1
+                1
               </Badge>
               <p>
-          {t.rich("stepOne", {
-            CreateAcount: (chunks) => (
-              <a
-                href="https://www.meta.com/fr-fr/help/quest/1336626146870772/"
-                target="_blank"
-                rel="noreferrer"
-                className="text-primary font-semibold"
-              >
-                {chunks}
-              </a>
-            ),
-            LogIn: (chunks) => (
-              <a
-                href="https://www.meta.com/fr-fr/help/quest/1336626146870772/"
-                target="_blank"
-                rel="noreferrer"
-                className="text-primary font-semibold"
-              >
-                {chunks}
-              </a>
-            ),
-            ReferralLink: (chunks) => (
-              <a
+                {t.rich("stepOne", {
+                  CreateAcount: (chunks) => (
+                    <a
+                      href="https://www.meta.com/fr-fr/help/quest/1336626146870772/"
+                      target="_blank"
+                      rel="noreferrer"
                       className="text-primary font-semibold"
                     >
                       {chunks}
                     </a>
+                  ),
+                  LogIn: (chunks) => (
+                    <a
+                      href="https://www.meta.com/fr-fr/help/quest/1336626146870772/"
+                      target="_blank"
+                      rel="noreferrer"
+                      className="text-primary font-semibold"
+                    >
+                      {chunks}
+                    </a>
+                  ),
+                  ReferralLink: (chunks) => (
+                    <a className="text-primary font-semibold">{chunks}</a>
                   ),
                 })}
               </p>

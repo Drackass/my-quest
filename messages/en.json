@@ -20,7 +20,7 @@
     "stepThree": "take advantage of the <Bold>{discount}%</Bold> discount",
     "FollowMeBtn": "Follow Me",
     "UseLinkBtn": "save {discount}%",
-    "noDevicesFound": "No devices found."
+    "noAppsFound": "No apps found."
   },
   "referralLinksDevices":{
     "getCredit": "Get a ${credit} credit with your purchase",

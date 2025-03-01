@@ -26,7 +26,7 @@ export default function SearchSection() {
         />
         <Input
           placeholder={t("placeholder")}
-          className="h-14 placeholder:text-lg pl-14 bg-secondary !text-lg"
+          className="h-14 placeholder:text-lg pl-14 bg-background !text-lg"
           value={search}
           onChange={(e) => setSearch(e.target.value)}
         />
